@@ -1,1 +1,1 @@
-Content for my workshop on using [surveydown](https://surveydown.org/) to build reproducible and programmable surveys
+Content for my workshop for the [2025 Quant UX Conference](https://www.quantuxcon.org/quant-ux-con/quant-ux-con-2025) on using [surveydown](https://surveydown.org/) to build reproducible and programmable surveys.
