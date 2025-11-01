@@ -1,0 +1,24 @@
+---
+eval: false
+toc: true
+---
+
+### 1. Install R & Quarto
+
+You need both: 
+ 
+- Install [{{< fa brands r-project >}}](https://CRAN.R-project.org/)
+- Install [Quarto](https://quarto.org/)
+
+We also recommend working with an IDE that has good support for R, Quarto, and Shiny.
+
+[RStudio](https://posit.co/products/open-source/rstudio/) is great, and we also like [VSCode](https://code.visualstudio.com/) and [Positron](https://github.com/posit-dev/positron).
+
+### 2. Install the `surveydown` and `sdApps` R packages
+
+We recommend installing the development versions of `surveydown` and `sdApps` from GitHub:
+
+```{r}
+# install.packages("pak")
+pak::pak(c("surveydown-dev/surveydown", "surveydown-dev/sdstudio"))
+```

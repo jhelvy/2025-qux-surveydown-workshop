@@ -1,0 +1,7 @@
+
+class: inverse, middle
+
+# .fancy[`r rmarkdown::metadata$title`]
+
+### 1. Storing data
+### 2. Fetching data

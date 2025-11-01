@@ -1,0 +1,7 @@
+
+class: inverse, middle
+
+# .fancy[`r rmarkdown::metadata$title`]
+
+### 1. Reactivity basics
+### 2. .orange[Reactive questions]
