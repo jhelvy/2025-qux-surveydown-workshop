@@ -14,9 +14,9 @@ We also recommend working with an IDE that has good support for R, Quarto, and S
 
 [RStudio](https://posit.co/products/open-source/rstudio/) is great, and we also like [VSCode](https://code.visualstudio.com/) and [Positron](https://github.com/posit-dev/positron).
 
-### 2. Install the `surveydown` and `sdApps` R packages
+### 2. Install the `surveydown` and `sdstudio` R packages
 
-We recommend installing the development versions of `surveydown` and `sdApps` from GitHub:
+We recommend installing the development versions of `surveydown` and `sdstudio` from GitHub:
 
 ```{r}
 # install.packages("pak")
