@@ -48,11 +48,9 @@ class: center
 
 ---
 
-## Conditional question display
+.leftcol[
 
-Define both _conditional_ and _target_ questions in `survey.qmd`
-
-.leftcol70[.code70[
+survey.qmd
 
 ```{r}
 #| eval: false
@@ -78,13 +76,13 @@ sd_question(
 )
 ```
 
-]]
+]
 
----
+--
 
-## Conditional question display
+.rightcol[
 
-Define condition with `sd_show_if` in `app.R`
+app.R
 
 ```{r}
 #| eval: false
@@ -100,19 +98,11 @@ server <- function(input, output, session) {
 }
 ```
 
---
+Condition ~ Target
 
-1) The structure of the condition is always:
+"If {condition}, then show {target}"
 
-```{r}
-#| eval: false
-
-<condition> ~ "target_question_id"
-```
-
---
-
-2) Note the use of `input$penguins`
+]
 
 ---
 
@@ -135,9 +125,9 @@ class: center
 
 ---
 
-First, define all pages in your `survey.qmd` file:
+.leftcol[.code70[
 
-.leftcol[
+survey.qmd
 
 ````{markdown}
 --- page1
@@ -156,13 +146,6 @@ This is page 2A
 sd_next()
 ```
 
-````
-
-]
-
-.rightcol[
-
-````{markdown}
 --- page2b
 
 This is page 2B
@@ -175,19 +158,15 @@ sd_next()
 
 This is page 3
 
-```{r}
-sd_close()
-```
-
 ````
 
-]
+]]
 
----
+--
 
-.leftcol[
+.rightcol[
 
-In `app.R`:
+app.R
 
 ```{r}
 #| eval: false
@@ -212,14 +191,6 @@ server <- function(input, output, session) {
 ```
 
 ]
-
-.rightcol[
-
-
-
-]
-
-
 
 ---
 
@@ -246,13 +217,14 @@ class: center
 
 ---
 
-.leftcol60[
+.leftcol[
 
-In `survey.qmd`: Target screenout question 
+survey.qmd
+
+````{markdown}
+--- page1
 
 ```{r}
-#| eval: false
-
 sd_question(
   type  = 'mc',
   id    = 'vehicle_ownership',
@@ -264,7 +236,16 @@ sd_question(
 )
 ```
 
-In `app.R`:
+--- screenout
+
+Sorry, but you are not qualified to take our survey.
+````
+
+]
+
+.rightcol[
+
+app.R
 
 ```{r}
 #| eval: false
@@ -280,18 +261,9 @@ server <- function(input, output, session) {
 }
 ```
 
-]
+Condition ~ Target Page
 
-.rightcol40[
-
-Target screenout page
-
-````{markdown}
---- screenout
-
-Sorry, but you are not qualified to take our survey.
-
-````
+"If {condition}, then skip to {target}"
 
 ]
 
@@ -320,3 +292,10 @@ countdown(
 - Add conditional logic content:
     - Add one simple multiple choice question about your survey topic and another that will only display depending on a specific choice in the first question.
     - Add a target page that respondents should be sent to based on their choices in another question in an earlier page (e.g., a multiple choice question).
+
+## OR:
+
+Open and play with the examples:
+
+- `part-2-conditional-display`
+- `part-2-conditional-navigation`
