@@ -198,8 +198,8 @@ sd_question(
   id    = "penguins",
   label = "What's your favorite penguin?",
   option = c(
-*   "Adélie"    = "adelie",
-    "Chinstrap" = "chinstrap",
+    "Adélie"    = "adelie", 
+*   "Chinstrap" = "chinstrap",
     "Gentoo"    = "gentoo"
   )
 )
@@ -217,7 +217,7 @@ Display a question _value_:
 sd_output("penguins", type = "value")
 ```
 
-Example: `adelie`
+Example: `chinstrap`
 
 &lt;br&gt;
 
@@ -228,7 +228,7 @@ Display a question _label_:
 sd_output("penguins", type = "label_option")
 ```
 
-Example: `Adélie`
+Example: `Chinstrap`
 
 ]
 
@@ -275,7 +275,7 @@ Example:&lt;br&gt;`What's your favorite penguin?`
 
 class: inverse
 
-<div class="countdown" id="timer_14fa6e16" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_85590719" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">07</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -565,7 +565,7 @@ Are you a **cat** owner?
 
 class: inverse
 
-<div class="countdown" id="timer_7f0025b5" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_d57336d8" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -599,6 +599,15 @@ Display the question inside your survey (`survey.qmd` file):
 sd_output("id", type = "question")
 ```
 
+]
+
+.rightcol30[
+
+## OR:
+
+Try out the final example:
+
+`part-4-reactive-questions`
 ]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

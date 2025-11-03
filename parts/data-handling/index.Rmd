@@ -104,7 +104,7 @@ Click the "connect" button in your project
 
 .rightcol[
 
-Find the “Transaction pooler”  section
+Select “Transaction pooler” in menu
 
 <center>
 <img src="images/supabase-connection.png" width=100%>
@@ -323,3 +323,7 @@ countdown(
 - Edit your `app.R` file to reactively access your survey data.
 - Use your data to make a plot about your data.
 - Display your plot in your `survey.qmd` file with `plotOutput("my_plot")`
+
+## Try the live polling demo
+
+Drop your `.env` file into the `part-3-live-polling` example and view live data summarised inside the survey!
