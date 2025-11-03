@@ -1,6 +1,5 @@
 ---
 title: "Reactivity"
-date: May 29, 2025
 author: "John Paul Helveston"
 institute: "The George Washington University | Dept. of Engineering Management and Systems Engineering"
 output:
@@ -151,8 +150,8 @@ sd_question(
   id    = "penguins",
   label = "What's your favorite penguin?",
   option = c(
-    "Adélie"    = "adelie", #<<
-    "Chinstrap" = "chinstrap",
+    "Adélie"    = "adelie", 
+    "Chinstrap" = "chinstrap", #<<
     "Gentoo"    = "gentoo"
   )
 )
@@ -171,7 +170,7 @@ Display a question _value_:
 sd_output("penguins", type = "value")
 ```
 
-Example: `adelie`
+Example: `chinstrap`
 
 <br>
 
@@ -183,7 +182,7 @@ Display a question _label_:
 sd_output("penguins", type = "label_option")
 ```
 
-Example: `Adélie`
+Example: `Chinstrap`
 
 ]
 
@@ -558,4 +557,13 @@ Display the question inside your survey (`survey.qmd` file):
 sd_output("id", type = "question")
 ```
 
+]
+
+.rightcol30[
+
+## OR:
+
+Try out the final example:
+
+`part-4-reactive-questions`
 ]

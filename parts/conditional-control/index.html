@@ -4,7 +4,6 @@
     <title>Conditional Control</title>
     <meta charset="utf-8" />
     <meta name="author" content="John Paul Helveston" />
-    <meta name="date" content="2025-05-29" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
@@ -96,11 +95,9 @@ class: center
 
 ---
 
-## Conditional question display
+.leftcol[
 
-Define both _conditional_ and _target_ questions in `survey.qmd`
-
-.leftcol70[.code70[
+survey.qmd
 
 
 ``` r
@@ -125,13 +122,13 @@ sd_question(
 )
 ```
 
-]]
+]
 
----
+--
 
-## Conditional question display
+.rightcol[
 
-Define condition with `sd_show_if` in `app.R`
+app.R
 
 
 ``` r
@@ -146,18 +143,11 @@ server &lt;- function(input, output, session) {
 }
 ```
 
---
+Condition ~ Target
 
-1) The structure of the condition is always:
+"If {condition}, then show {target}"
 
-
-``` r
-&lt;condition&gt; ~ "target_question_id"
-```
-
---
-
-2) Note the use of `input$penguins`
+]
 
 ---
 
@@ -180,13 +170,13 @@ class: center
 
 ---
 
-First, define all pages in your `survey.qmd` file:
+.leftcol[.code70[
 
-.leftcol[
+survey.qmd
 
 
 ```` markdown
-::: {.sd_page id=page1}
+--- page1
 
 This is page 1
 
@@ -194,9 +184,7 @@ This is page 1
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=page2a}
+--- page2a
 
 This is page 2A
 
@@ -204,17 +192,7 @@ This is page 2A
 sd_next()
 ```
 
-:::
-
-````
-
-]
-
-.rightcol[
-
-
-```` markdown
-::: {.sd_page id=page2b}
+--- page2b
 
 This is page 2B
 
@@ -222,26 +200,19 @@ This is page 2B
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=page3}
+--- page3
 
 This is page 3
 
-```{r}
-sd_close()
-```
-
-:::
 ````
 
-]
+]]
 
----
+--
 
-.leftcol[
+.rightcol[
 
-In `app.R`:
+app.R
 
 
 ``` r
@@ -265,14 +236,6 @@ server &lt;- function(input, output, session) {
 ```
 
 ]
-
-.rightcol[
-
-
-
-]
-
-
 
 ---
 
@@ -305,12 +268,15 @@ class: center
 
 ---
 
-.leftcol60[
+.leftcol[
 
-In `survey.qmd`: Target screenout question 
+survey.qmd
 
 
-``` r
+```` markdown
+--- page1
+
+```{r}
 sd_question(
   type  = 'mc',
   id    = 'vehicle_ownership',
@@ -322,7 +288,16 @@ sd_question(
 )
 ```
 
-In `app.R`:
+--- screenout
+
+Sorry, but you are not qualified to take our survey.
+````
+
+]
+
+.rightcol[
+
+app.R
 
 
 ``` r
@@ -337,20 +312,9 @@ server &lt;- function(input, output, session) {
 }
 ```
 
-]
+Condition ~ Target Page
 
-.rightcol40[
-
-Target screenout page
-
-
-``` markdown
-::: {.sd_page id=screenout}
-
-Sorry, but you are not qualified to take our survey.
-
-:::
-```
+"If {condition}, then skip to {target}"
 
 ]
 
@@ -364,7 +328,7 @@ class: center, middle
 
 class: inverse
 
-<div class="countdown" id="timer_36360f84" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_78cf5075" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -375,6 +339,13 @@ class: inverse
 - Add conditional logic content:
     - Add one simple multiple choice question about your survey topic and another that will only display depending on a specific choice in the first question.
     - Add a target page that respondents should be sent to based on their choices in another question in an earlier page (e.g., a multiple choice question).
+
+## OR:
+
+Open and play with the examples:
+
+- `part-2-conditional-display`
+- `part-2-conditional-navigation`
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
