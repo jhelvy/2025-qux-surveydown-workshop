@@ -4,7 +4,6 @@
     <title>Conditional Control</title>
     <meta charset="utf-8" />
     <meta name="author" content="John Paul Helveston" />
-    <meta name="date" content="2025-05-29" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
@@ -186,7 +185,7 @@ First, define all pages in your `survey.qmd` file:
 
 
 ```` markdown
-::: {.sd_page id=page1}
+--- page1
 
 This is page 1
 
@@ -194,17 +193,13 @@ This is page 1
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=page2a}
+--- page2a
 
 This is page 2A
 
 ```{r}
 sd_next()
 ```
-
-:::
 
 ````
 
@@ -214,7 +209,7 @@ sd_next()
 
 
 ```` markdown
-::: {.sd_page id=page2b}
+--- page2b
 
 This is page 2B
 
@@ -222,9 +217,7 @@ This is page 2B
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=page3}
+--- page3
 
 This is page 3
 
@@ -232,7 +225,6 @@ This is page 3
 sd_close()
 ```
 
-:::
 ````
 
 ]
@@ -345,11 +337,10 @@ Target screenout page
 
 
 ``` markdown
-::: {.sd_page id=screenout}
+--- screenout
 
 Sorry, but you are not qualified to take our survey.
 
-:::
 ```
 
 ]
@@ -364,7 +355,7 @@ class: center, middle
 
 class: inverse
 
-<div class="countdown" id="timer_36360f84" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_7a826dbf" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>

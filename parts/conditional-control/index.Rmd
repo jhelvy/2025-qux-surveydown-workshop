@@ -1,6 +1,5 @@
 ---
 title: "Conditional Control"
-date: May 29, 2025
 author: "John Paul Helveston"
 institute: "The George Washington University | Dept. of Engineering Management and Systems Engineering"
 output:
@@ -141,7 +140,7 @@ First, define all pages in your `survey.qmd` file:
 .leftcol[
 
 ````{markdown}
-::: {.sd_page id=page1}
+--- page1
 
 This is page 1
 
@@ -149,17 +148,13 @@ This is page 1
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=page2a}
+--- page2a
 
 This is page 2A
 
 ```{r}
 sd_next()
 ```
-
-:::
 
 ````
 
@@ -168,7 +163,7 @@ sd_next()
 .rightcol[
 
 ````{markdown}
-::: {.sd_page id=page2b}
+--- page2b
 
 This is page 2B
 
@@ -176,9 +171,7 @@ This is page 2B
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=page3}
+--- page3
 
 This is page 3
 
@@ -186,7 +179,6 @@ This is page 3
 sd_close()
 ```
 
-:::
 ````
 
 ]
@@ -295,11 +287,10 @@ server <- function(input, output, session) {
 Target screenout page
 
 ````{markdown}
-::: {.sd_page id=screenout}
+--- screenout
 
 Sorry, but you are not qualified to take our survey.
 
-:::
 ````
 
 ]

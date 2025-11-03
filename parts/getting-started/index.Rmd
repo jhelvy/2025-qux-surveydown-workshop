@@ -1,6 +1,5 @@
 ---
 title: "Getting started with surveydown"
-date: May 29, 2025
 author: "John Paul Helveston"
 institute: "The George Washington University | Dept. of Engineering Management and Systems Engineering"
 output:
@@ -89,14 +88,184 @@ class: center
 
 <br>
 
-## 1. Be sure to [install everything](https://jhelvy.github.io/2025-surveydown-workshop/install.html)
+## 1. Be sure to [install everything](https://jhelvy.github.io/2025-qux-surveydown-workshop/install.html)
 
-## 2. Download the [examples](https://jhelvy.github.io/2025-surveydown-workshop/examples.zip)
+## 2. Download the [examples](https://jhelvy.github.io/2025-qux-surveydown-workshop/examples.zip)
 
 ---
 
-```{r child="topics/0.Rmd"}
-```
+class: center, middle, inverse
+
+# .font150[.fancy[`r rmarkdown::metadata$title`]]
+
+---
+
+class: center, middle, inverse
+
+<center>
+<img src="images/demo.gif" width=80%>
+</center>
+
+---
+
+class: center, middle
+
+.font150[**WYSIWYG Interface**]
+
+<center>
+<img src="images/google-form.png" width=75%>
+</center>
+
+---
+
+class: middle
+
+.leftcol65[
+
+<center>
+<img src="images/google-form.png" width=100%>
+</center>
+
+]
+
+.rightcol35[
+
+# Limitations
+
+<br>
+
+## .font80[❌] .font90[Reproducibility]
+
+]
+
+---
+
+class: middle
+
+.leftcol65[
+
+<center>
+<img src="images/google-form.png" width=100%>
+</center>
+
+]
+
+.rightcol35[
+
+# Limitations
+
+<br>
+
+## .font80[❌] .font90[Reproducibility]
+
+## .font80[❌] .font90[Version control]
+
+]
+
+---
+
+<center>
+<img src="images/xkcd-version-control.png" width=40%>
+</center>
+
+---
+
+class: middle
+
+.leftcol65[
+
+<center>
+<img src="images/google-form.png" width=100%>
+</center>
+
+]
+
+.rightcol35[
+
+# Limitations
+
+<br>
+
+## .font80[❌] .font90[Reproducibility]
+
+## .font80[❌] .font90[Version control]
+
+## .font80[❌] .font90[Limited features]
+
+]
+
+---
+
+class: middle
+
+.leftcol65[
+
+<center>
+<img src="images/google-form.png" width=100%>
+</center>
+
+]
+
+.rightcol35[
+
+# Limitations
+
+<br>
+
+## .font80[❌] .font90[Reproducibility]
+
+## .font80[❌] .font90[Version control]
+
+## .font80[❌] .font90[Limited features]
+
+## .font80[❌] .font90[Open source]
+
+]
+
+---
+
+class: inverse, middle
+
+# .center[Why not make surveys from code?]
+
+---
+
+class: inverse, middle
+
+.leftcol[
+
+<br><br><br><br><br>
+
+# .center[Why not make surveys from code?]
+
+]
+
+.rightcol45[
+
+<br>
+
+# ~~Limitations~~ Features
+
+## ✅ Reproducibility
+
+## ✅ Version control
+
+## ✅ Lots of features
+
+## ✅ Open source
+
+]
+
+---
+
+class: middle, inverse
+
+# .font130[.center[Introducing surveydown!]]
+
+<br>
+<center>
+<img src="images/logo-surveydown.png" width=300>
+</center>
 
 ---
 
@@ -105,82 +274,68 @@ class: center
 
 ---
 
-background-color: #fff
-class: center
+background-image: url("images/images/Slide1.png")
+background-size: cover
 
-# Typical experience making a survey
+---
+
+name: whatis
+class: center, middle, inverse
+
+# .font140[.center[What is Quarto?]]
+
+---
+
+class: center, middle
+
+# Quarto is a publishing system that blends **markdown-formatted text** & **code**
 
 <center>
-<img src="images/google-form.gif" width=600>
+<img src="images/quarto-process.png" width=100%>
 </center>
 
 ---
 
-background-color: #fff
-class: middle
+.leftcol[
 
-.leftcol60[
+.center[.font100[**example.qmd**]]
 
-<center>
-<img src="images/google-form.gif" width=600>
-</center>
+.code70[
 
-]
-
-.rightcol40[
-
-### ❌ Reproducible
-### ❌ Data Control
-### ⚠️ Free to Use
-### ⚠️ Open Source
-### ⚠️ Easy Collaboration
-### ⚠️ Feature Packed
-
-]
-
+````{markdown}
+---
+format: html
+title: "HTML Page with R Code"
 ---
 
-class: center
+# Hello, World!
 
-## Introducing `surveydown`
+This is a simple **HTML** page with *R* code.
 
-<center>
-<img src="images/technologies.svg" width=90%>
-</center>
+```{r}
+library(ggplot2)
 
----
-
-```{r child="topics/2.Rmd"}
+df <- data.frame(x = rnorm(100))
+ggplot(df, aes(x = x)) +
+  geom_histogram()
 ```
+````
 
----
+]]
 
-class: center
+.rightcol[
 
-# Components
+.center[.font100[**Rendered output**]]
 
-<br>
-
-.leftcol45[
-
-### `survey.qmd` 
-
-A **Quarto doc** defining the main survey content (pages, text, images, questions, etc).
-
-
-]
-
-.rightcol45[
-
-### `app.R` 
-
-An **R script** defining the survey Shiny app. It sets up the database and server, and launches the survey.
+<center>
+<img src="images/quarto-r-html.png" width=100%>
+</center>
 
 ]
 
 ---
 
-.leftcol[.code50[
+.leftcol[.code60[
 
 ````{markdown}
 ---
@@ -193,7 +348,7 @@ warning: false
 library(surveydown)
 ```
 
-::: {.sd_page id=welcome}
+--- welcome
 
 # Welcome to our survey!
 
@@ -212,17 +367,13 @@ sd_question(
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=end}
+--- end
 
 This is the last page of the survey.
 
 ```{r}
 sd_close()
 ```
-
-:::
 
 ````
 
@@ -236,7 +387,7 @@ sd_close()
 
 ---
 
-.leftcol[.code50[
+.leftcol[.code60[
 
 ````{markdown}
 --- #<<
@@ -244,12 +395,12 @@ format: html #<<
 echo: false #<<
 warning: false #<<
 --- #<<
- 
+
 ```{r} #<<
 library(surveydown) #<<
 ``` #<<
 
-::: {.sd_page id=welcome}
+--- welcome
 
 # Welcome to our survey!
 
@@ -268,17 +419,13 @@ sd_question(
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=end}
+--- end
 
 This is the last page of the survey.
 
 ```{r}
 sd_close()
 ```
-
-:::
 
 ````
 
@@ -295,7 +442,7 @@ Load `surveydown` package
 
 ---
 
-.leftcol[.code50[
+.leftcol[.code60[
 
 ````{markdown}
 ---
@@ -308,7 +455,7 @@ warning: false
 library(surveydown)
 ```
 
-::: {.sd_page id=welcome} #<<
+--- welcome #<<
 
 # Welcome to our survey!
 
@@ -327,9 +474,7 @@ sd_question(
 sd_next()
 ```
 
-::: #<<
-
-::: {.sd_page id=end} #<<
+--- end #<<
 
 This is the last page of the survey.
 
@@ -337,29 +482,26 @@ This is the last page of the survey.
 sd_close()
 ```
 
-::: #<<
-
 ````
 
 ]]
 
 .rightcol[
 
-Define pages using "fences"
+Define page breaks like this:
 
 ````{markdown}
-::: {.sd_page id=page_id}
+--- page_id
 
 Page content
 
-:::
 ````
 
 ]
 
 ---
 
-.leftcol[.code50[
+.leftcol[.code60[
 
 ````{markdown}
 ---
@@ -372,7 +514,7 @@ warning: false
 library(surveydown)
 ```
 
-::: {.sd_page id=welcome}
+--- welcome
 
 # Welcome to our survey! #<<
 
@@ -391,9 +533,7 @@ sd_question( #<<
 sd_next() #<<
 ``` #<<
 
-:::
-
-::: {.sd_page id=end}
+--- end
 
 This is the last page of the survey.
 
@@ -401,15 +541,13 @@ This is the last page of the survey.
 sd_close()
 ```
 
-:::
-
 ````
 
 ]]
 
 .rightcol[
 
-<br><br><br><br><br>Use markdown for page content
+<br><br><br><br><br><br>Use markdown for page content
 
 Use `sd_question()` in code chunk for survey questions
 
@@ -418,6 +556,102 @@ Use `sd_question()` in code chunk for survey questions
 ]
 
 ---
+
+
+.leftcol[.code60[
+
+````{markdown}
+---
+format: html
+echo: false
+warning: false
+---
+
+```{r}
+library(surveydown)
+```
+
+--- welcome
+
+# Welcome to our survey! #<<
+
+```{r} #<<
+sd_question( #<<
+  type  = "mc", #<<
+  id    = "penguins", #<<
+  label = "What's your favorite penguin?", #<<
+  option = c( #<<
+    "Adélie"    = "adelie", #<<
+    "Chinstrap" = "chinstrap", #<<
+    "Gentoo"    = "gentoo" #<<
+  ) #<<
+) #<<
+
+sd_next() #<<
+``` #<<
+
+--- end
+
+This is the last page of the survey.
+
+```{r}
+sd_close()
+```
+
+````
+
+]]
+
+.rightcol[
+
+<br>
+
+<center>
+<img src="images/survey-app.png" width=100%>
+</center>
+
+]
+
+---
+
+class: center, middle, inverse
+
+# .font120[.center[Use Shiny to drive the web app]]
+
+<br>
+
+<center>
+<img src="images/logo-shiny.png" width=30%>
+</center>
+
+---
+
+class: center
+
+# Survey Components
+
+<br>
+
+.leftcol45[
+
+### `survey.qmd`
+
+A **Quarto doc** defining the main survey content (pages, text, images, questions, etc).
+
+
+]
+
+.rightcol45[
+
+### `app.R`
+
+An **R script** defining the survey Shiny app. It sets up the database and server, and launches the survey.
+
+]
+
+---
+
+class: middle
 
 .leftcol[.code70[
 
@@ -454,6 +688,8 @@ shiny::shinyApp(
 ]
 
 ---
+
+class: middle
 
 .leftcol[.code70[
 
@@ -494,11 +730,6 @@ Make standard UI
 <br>Run surveydown server
 
 ]
-
----
-
-```{r child="topics/3.Rmd"}
-```
 
 ---
 
@@ -544,7 +775,7 @@ shiny::runApp('app.R')
 
 ---
 
-```{r child="topics/4.Rmd"}
+```{r child="topics/2.Rmd"}
 ```
 
 ---
@@ -627,21 +858,34 @@ barposition: bottom #<<
 
 # Inserting pages
 
-Insert new pages with `:::` symbols, like this
+Insert new pages with the shorthand syntax using three dashes `---` followed by the page ID:
 
 ```{r}
 #| eval: false
 
-::: {.sd_page id=page_id}
+--- page1
 
-Page content here
+Page 1 content here
 
-:::
+--- page2
+
+Page 2 content here
+
 ```
 
---
+---
 
-Insert next buttons with the `sd_next()` function, like this (blank goes to next page):
+# Inserting next buttons
+
+Insert buttons with the `sd_next()` function to go to the next page:
+
+````markdown
+`r ''````{r}
+sd_next()
+```
+````
+
+Specify a specific page to go to: 
 
 ````markdown
 `r ''````{r}
@@ -696,6 +940,10 @@ sd_question(
   )
 )
 ```
+
+**Data**
+
+`yes`, `kind_of`, or `no`
 
 ]
 
@@ -771,3 +1019,10 @@ countdown(
     - Page 1: A welcome message in large font ("Welcome to a survey about [topic]") and an image about the topic (find an image somewhere).
     - Pages 2 to N: Add different questions about the topic using several different question types.
 - Try out different themes to change the look and feel. 
+
+## OR:
+
+Open and play with the examples:
+
+- `part-1-question-types`
+- `part-1-question-yml`

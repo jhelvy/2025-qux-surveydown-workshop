@@ -1,6 +1,5 @@
 ---
 title: "Data Handling"
-date: May 29, 2025
 author: "John Paul Helveston"
 institute: "The George Washington University | Dept. of Engineering Management and Systems Engineering"
 output:
